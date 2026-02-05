@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <!-- ===== SEO META ===== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Omni Wahana Teknologi | Hardware & Software Solutions</title>
+  <meta name="description" content="Omniware menyediakan hardware, software legal, dan konsultasi IT profesional untuk bisnis modern."/>
+  <meta name="keywords" content="hardware, software, IT consultant, trading IT, solusi teknologi"/>
+  <meta name="author" content="Omni Wahana Teknologi"/>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Omni Wahana Teknologi"/>
+  <meta property="og:description" content="Solusi Hardware & Software Terintegrasi"/>
+  <meta property="og:type" content="website"/>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- ===== BRANDING CONFIG ===== -->
+  <script>
+    const BRAND = {
+      name: "Omni Wahana Teknologi",
+      email: "info@omniware.com",
+      whatsapp: "6281293323329", // format internasional
+      primary: "#020617",
+      secondary: "#0f172a",
+      accent: "#38bdf8"
+    }
+
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: BRAND.primary,
+            secondary: BRAND.secondary,
+            accent: BRAND.accent
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-primary text-gray-200">
+
+<!-- NAVBAR -->
+<nav class="fixed w-full bg-primary border-b border-gray-800 z-50">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <div class="text-xl font-bold text-white">
+      <span id="brandName"></span><span class="text-accent">.</span>
+    </div>
+
+    <ul class="hidden md:flex space-x-8 text-sm">
+      <li><a href="#home" class="hover:text-accent">Home</a></li>
+      <li><a href="#services" class="hover:text-accent">Products</a></li>
+      <li><a href="#about" class="hover:text-accent">About</a></li>
+      <li><a href="#contact" class="hover:text-accent">Contact</a></li>
+    </ul>
+
+    <button id="menuBtn" class="md:hidden">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </div>
+
+  <div id="mobileMenu" class="hidden bg-secondary md:hidden">
+    <ul class="flex flex-col p-6 space-y-4 text-sm">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Products</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="min-h-screen flex items-center pt-24 bg-gradient-to-br from-primary to-black">
+  <div class="max-w-7xl mx-auto px-6">
+    <h1 class="text-4xl md:text-6xl font-bold text-white">
+      Solusi Hardware & Software Terintegrasi
+    </h1>
+    <p class="mt-6 text-gray-400 max-w-xl">
+      Partner teknologi terpercaya untuk hardware, software, dan konsultasi IT perusahaan Anda
+    </p>
+    <a href="#contact" class="inline-block mt-8 px-8 py-3 bg-accent text-primary font-semibold rounded-lg">
+      Hubungi Kami
+    </a>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="py-20 bg-black">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center text-white mb-12">Layanan Kami</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-secondary p-8 rounded-xl border border-gray-800">
+        <h3 class="text-xl font-semibold text-white mb-4">Jual Hardware</h3>
+        <p class="text-gray-400 text-sm">Server, network, dan perangkat IT berkualitas tinggi</p>
+      </div>
+      <div class="bg-secondary p-8 rounded-xl border border-gray-800">
+        <h3 class="text-xl font-semibold text-white mb-4">Lisensi Software</h3>
+        <p class="text-gray-400 text-sm">Software original dan legal untuk bisnis</p>
+      </div>
+      <div class="bg-secondary p-8 rounded-xl border border-gray-800">
+        <h3 class="text-xl font-semibold text-white mb-4">Konsultasi IT</h3>
+        <p class="text-gray-400 text-sm">Perencanaan IT strategis dan scalable</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="py-20 bg-primary">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold text-white mb-6">Tentang Kami</h2>
+    <p class="text-gray-400">
+      Perusahaan trading hardware dan software yang berfokus pada solusi teknologi modern, aman, dan efisien
+    </p>
+  </div>
+</section>
+
+<!-- CONTACT (WhatsApp + Email) -->
+<section id="contact" class="py-20 bg-black">
+  <div class="max-w-3xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center text-white mb-8">Hubungi Kami</h2>
+
+    <form onsubmit="sendMessage(event)" class="space-y-6">
+      <input id="name" type="text" placeholder="Nama" required class="w-full px-4 py-3 bg-secondary border border-gray-700 rounded"/>
+      <input id="email" type="email" placeholder="Email" required class="w-full px-4 py-3 bg-secondary border border-gray-700 rounded"/>
+      <textarea id="message" rows="4" placeholder="Pesan" required class="w-full px-4 py-3 bg-secondary border border-gray-700 rounded"></textarea>
+
+      <button class="w-full py-3 bg-accent text-primary font-semibold rounded">
+        Kirim via WhatsApp
+      </button>
+
+      <a id="emailLink" class="block text-center text-sm text-accent underline">
+        Kirim via Email
+      </a>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-primary border-t border-gray-800 text-center py-6 text-sm text-gray-500">
+  © 2026 <span id="footerBrand"></span> · <span id="footerEmail"></span>
+</footer>
+
+<!-- SCRIPT -->
+<script>
+  // Branding inject
+  document.getElementById('brandName').innerText = BRAND.name
+  document.getElementById('footerBrand').innerText = BRAND.name
+  document.getElementById('footerEmail').innerText = BRAND.email
+  document.getElementById('emailLink').href = `mailto:${BRAND.email}`
+
+  // Mobile menu
+  document.getElementById('menuBtn').onclick = () =>
+    document.getElementById('mobileMenu').classList.toggle('hidden')
+
+  // WhatsApp form
+  function sendMessage(e) {
+    e.preventDefault()
+    const name = document.getElementById('name').value
+    const email = document.getElementById('email').value
+    const msg = document.getElementById('message').value
+
+    const text = `Halo ${BRAND.name}%0A%0ANama: ${name}%0AEmail: ${email}%0APesan: ${msg}`
+    window.open(`https://wa.me/${BRAND.whatsapp}?text=${text}`, '_blank')
+  }
+</script>
+
+</body>
+</html>
